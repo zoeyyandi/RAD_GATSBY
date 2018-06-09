@@ -1,0 +1,13 @@
+.slick-dots {
+  position: absolute;
+  bottom: 8%;
+  right: 25%;
+}
+
+.slick-dots li button:before {
+  font-size: 20px;
+}
+
+.slick-slider > .slick-list {
+  height: 100vh !important;
+}
