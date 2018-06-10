@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 const Video = styled.video`
   position: absolute;
   left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  width: auto;
+  height: 100%;
   min-height: 100%;
   min-width: 100%;
   z-index: -100;
