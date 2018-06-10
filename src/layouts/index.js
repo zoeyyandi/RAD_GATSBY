@@ -12,10 +12,7 @@ const Layout = ({ children, data }) => (
   <div style={{ height: '100%' }}>
     <Helmet
       title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
-      ]}
+      meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
     />
     <div style={{ height: '100%' }}>{children()}</div>
   </div>

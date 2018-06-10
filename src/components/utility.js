@@ -8,28 +8,19 @@ Math.easeInOutQuad = function(t, b, c, d) {
   return -c / 2 * (t * (t - 2) - 1) + b;
 };
 
-Math.easeInCubic = function(t, b, c, d) {
-  var tc = (t /= d) * t * t;
-  return b + c * tc;
-};
-
-Math.inOutQuintic = function(t, b, c, d) {
-  var ts = (t /= d) * t,
-    tc = ts * t;
-  return b + c * (6 * tc * ts + -15 * ts * ts + 10 * tc);
-};
-
 // requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
-var requestAnimFrame = (function() {
-  return (
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    }
-  );
-})();
+if (typeof window !== 'undefined') {
+  var requestAnimFrame = (function() {
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
+  })();
+}
 
 export const scrollTo = (to, callback, duration) => {
   // because it's so fucking difficult to detect the scrolling element, just move them all
@@ -66,11 +57,7 @@ export const scrollTo = (to, callback, duration) => {
   animateScroll();
 };
 
-export const VIDEO = window.innerHeight;
-export const ABOUT = VIDEO;
-export const PORTFOLIO1 = VIDEO * 2;
-export const PORTFOLIO2 = VIDEO * 3;
-export const PORTFOLIO3 = VIDEO * 4;
-export const PORTFOLIO4 = VIDEO * 5;
-export const SERVICES = VIDEO * 6;
-export const CONTACT = VIDEO * 8;
+export const getSection = (scrollTop, ranges) => {
+  const section = ranges.find(range => scrollTop >= range.min && scrollTop < range.max);
+  return section.sectionName;
+};

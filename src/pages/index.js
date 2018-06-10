@@ -5,31 +5,17 @@ import Portfolio from '../components/portfolio';
 import Services from '../components/services';
 import Contact from '../components/contact';
 import SideNav from '../components/sideNav';
-import {
-  womens,
-  dispatches,
-  terroirs,
-  kstars,
-  us
-} from '../components/asset/images/index';
+import { womens, dispatches, terroirs, kstars, us } from '../components/asset/images/index';
 import _ from 'lodash';
 
 class IndexPage extends Component {
   state = {
-    clicked: false,
-    section: ''
+    scrollTop: 0
   };
-
-  handleNavClick = section => {
-    if (section) {
-      this.setState({ clicked: !this.state.clicked, section });
-    } else {
-      this.setState({ clicked: !this.state.clicked });
-    }
-  };
-
   scrollHandler = e => {
-    let scrollTop = e.srcElement.documentElement.scrollTop;
+    const scrollTop = e.srcElement.documentElement.scrollTop;
+    const sectionHeight = window.innerHeight;
+    this.getScrollTop();
   };
 
   scrollHandlerDebouced = _.debounce(this.scrollHandler, 200);
@@ -42,10 +28,15 @@ class IndexPage extends Component {
     window.removeEventListener('scroll', this.scrollHandlerDebouced);
   }
 
+  getScrollTop = () => {
+    const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    this.setState({ scrollTop });
+  };
+
   render() {
     return (
       <div>
-        <VideoSection isClicked={this.state.clicked} />
+        <VideoSection />
         <About />
         <Portfolio className={'womens'} imgs={womens} />
         <Portfolio className={'dispatch'} imgs={dispatches} hasVideo={true} />
@@ -54,10 +45,7 @@ class IndexPage extends Component {
         <Services />
         <Portfolio imgs={us} />
         <Contact />
-        <SideNav
-          section={this.state.section}
-          handleNavClick={this.handleNavClick}
-        />
+        <SideNav currentScrollTop={this.state.scrollTop} />
       </div>
     );
   }

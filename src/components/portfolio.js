@@ -17,7 +17,6 @@ const Img = styled.img`
   object-fit: cover;
 `;
 
-const convertAlt = img => img.split('/')[4].split('.')[0];
 const Portfolio = ({ imgs, hasVideo, className }) => {
   const settings = {
     dots: true,
@@ -29,6 +28,7 @@ const Portfolio = ({ imgs, hasVideo, className }) => {
     adaptiveHeight: true,
     dotsClass: `slick-dots ${className}`
   };
+
   return (
     <SceneWrapper>
       <Slider {...settings}>
@@ -39,7 +39,7 @@ const Portfolio = ({ imgs, hasVideo, className }) => {
             ) : (
               <picture key={key}>
                 <source srcSet={img.v} media="(max-width: 420px)" />
-                <Img src={img.h} alt={convertAlt(img.h)} />
+                <Img src={img.h} alt={img.h} />
               </picture>
             )
         )}
