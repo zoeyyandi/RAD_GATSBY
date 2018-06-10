@@ -7,7 +7,14 @@ const Wrapper = styled.div`
   background-color: #292827;
   color: white;
   font-family: Georgia;
-  font-size: 14pt;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6.4vh;
+  @media (max-width: 420px) {
+    padding: 2.8vh;
+  }
 `;
 
 const A = styled.a`
@@ -18,24 +25,41 @@ const A = styled.a`
 
 const H2 = styled.h2`
   font-family: Georgia;
-  font-size: 26pt;
+  font-size: calc(22pt + (42 - 22) * ((100vw - 420px) / (1024 - 420)));
+  margin-bottom: 2vh;
 `;
 
 const H3 = styled.h3`
   font-family: Georgia;
-  font-size: 16pt;
+  font-size: calc(12pt + (16 - 12) * ((100vw - 420px) / (1024 - 420)));
+  margin: 0;
+  padding: 0.5vh 0;
+`;
+
+const Paragraph = styled.p`
+  font-size: calc(12pt + (15 - 12) * ((100vw - 420px) / (1024 - 420)));
+  margin: 0;
+  padding: 2vh 0;
+`;
+
+const LineBreak = styled.br`
+  display: none;
+  @media (max-width: 420px) {
+    display: block;
+  }
 `;
 
 const Contact = () => (
   <Wrapper>
     <H2> Give us a shout </H2>
     <H3>
-      We'll hear you out, catch your drift &amp; introduce our way of thinking.
-      <br /> We love meeting new colleagues.
+      We'll hear you out, catch your drift &amp; <LineBreak /> introduce our way
+      of thinking.
     </H3>
-    <p>
+    <H3> We love meeting new colleagues.</H3>
+    <Paragraph>
       <A href="mailto:hey@rrrad.ca?Subject=Hello%20">hey@rrrad.ca</A>
-    </p>
+    </Paragraph>
   </Wrapper>
 );
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: #f3f3f3;
+  background-color: white;
   font-family: Georgia;
   font-size: 14pt;
   display: flex;
@@ -22,47 +22,73 @@ const Inner = styled.div`
 
 const H2 = styled.h2`
   font-family: WigrumBold;
-  font-size: 75pt;
+  font-size: calc(34pt + (60 - 34) * ((100vw - 420px) / (1024 - 420)));
   color: #292827;
   margin: 0;
 `;
 
 const ServiceList = styled.div`
   display: flex;
-  width: 100%;
+  padding-left: 1.5vw;
+  @media (max-width: 420px) {
+    flex-direction: column;
+    padding-left: 4.5vw;
+  }
 `;
 
 const Ul = styled.ul`
-  width: 100%;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 420px) {
+    display: block;
+    width: 100%;
+  }
+`;
+
+const Ul1 = Ul.extend`
+  @media (min-width: 768px) {
+    width: 28vw;
+  }
+  @media (min-width: 1000px) {
+    width: 22vw;
+  }
 `;
 
 const Li = styled.li`
   margin: 0;
-  list-style-position: inside;
-  width: 35%;
+  font-size: calc(12pt + (14 - 12) * ((100vw - 420px) / (1024 - 420)));
+  width: 100%;
+`;
+
+const Paragraph = styled.p`
+  font-size: calc(12pt + (14 - 12) * ((100vw - 420px) / (1024 - 420)));
+  margin: 0;
+  padding: 0.5vh 0 2vh 0;
 `;
 
 const Services = () => (
   <Wrapper>
     <Inner>
       <H2> holistic services </H2>
-      <p>
-        We look at a brand's entire ecosystem - everywhere they communicate everything.
-        <br /> Then we create concepts fine-tuned to unify, turn heads, change minds, and be practical.
-      </p>
+      <Paragraph>
+        We look at a brand's entire ecosystem - everywhere they communicate
+        anything.
+        <br /> Then we create concepts fine-tuned to unify, turn heads, change
+        minds, and be practical.
+      </Paragraph>
       <ServiceList>
-        <Ul>
+        <Ul1>
           <Li>Identity</Li>
-          <Li>Art Direction</Li>
           <Li>Logo &amp; Design</Li>
-          <Li>Voice, Copy &amp; Communications</Li>
           <Li>Brand Naming</Li>
-          <Li>Film &amp; Photo</Li>
           <Li>Brand Strategy</Li>
+        </Ul1>
+        <Ul>
+          <Li>Art Direction</Li>
+          <Li>Voice, Copy &amp; Communications</Li>
+          <Li>Film &amp; Photo</Li>
           <Li>Campaign &amp; Marketing Approach</Li>
         </Ul>
       </ServiceList>

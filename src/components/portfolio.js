@@ -17,33 +17,35 @@ const Img = styled.img`
   object-fit: cover;
 `;
 
-const settings = {
-  dots: true,
-  infinite: true,
-  arrows: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  adaptiveHeight: true
-};
-
 const convertAlt = img => img.split('/')[4].split('.')[0];
-const Portfolio = ({ imgs, hasVideo }) => (
-  <SceneWrapper>
-    <Slider {...settings}>
-      {imgs.map(
-        (img, key) =>
-          hasVideo && key === 3 ? (
-            <VideoSlide key={key} source={img} />
-          ) : (
-            <picture key={key}>
-              <source srcSet={img.v} media="(max-width: 420px)" />
-              <Img src={img.h} alt={convertAlt(img.h)} />
-            </picture>
-          )
-      )}
-    </Slider>
-  </SceneWrapper>
-);
+const Portfolio = ({ imgs, hasVideo, className }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    dotsClass: `slick-dots ${className}`
+  };
+  return (
+    <SceneWrapper>
+      <Slider {...settings}>
+        {imgs.map(
+          (img, key) =>
+            hasVideo && key === 3 ? (
+              <VideoSlide key={key} source={img} />
+            ) : (
+              <picture key={key}>
+                <source srcSet={img.v} media="(max-width: 420px)" />
+                <Img src={img.h} alt={convertAlt(img.h)} />
+              </picture>
+            )
+        )}
+      </Slider>
+    </SceneWrapper>
+  );
+};
 
 export default Portfolio;

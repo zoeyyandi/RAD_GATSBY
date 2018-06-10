@@ -5,7 +5,13 @@ import Portfolio from '../components/portfolio';
 import Services from '../components/services';
 import Contact from '../components/contact';
 import SideNav from '../components/sideNav';
-import { womens, dispatches, terroirs, kstars, us } from '../components/asset/images/index';
+import {
+  womens,
+  dispatches,
+  terroirs,
+  kstars,
+  us
+} from '../components/asset/images/index';
 import _ from 'lodash';
 
 class IndexPage extends Component {
@@ -41,14 +47,17 @@ class IndexPage extends Component {
       <div>
         <VideoSection isClicked={this.state.clicked} />
         <About />
-        <Portfolio imgs={womens} />
-        <Portfolio imgs={dispatches} hasVideo={true} />
-        <Portfolio imgs={terroirs} />
-        <Portfolio imgs={kstars} />
+        <Portfolio className={'womens'} imgs={womens} />
+        <Portfolio className={'dispatch'} imgs={dispatches} hasVideo={true} />
+        <Portfolio className={'terroir'} imgs={terroirs} />
+        <Portfolio className={'kstar'} imgs={kstars} />
         <Services />
         <Portfolio imgs={us} />
         <Contact />
-        <SideNav section={this.state.section} handleNavClick={this.handleNavClick} />
+        <SideNav
+          section={this.state.section}
+          handleNavClick={this.handleNavClick}
+        />
       </div>
     );
   }
