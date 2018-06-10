@@ -4,14 +4,11 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
-  position: sticky;
-  top: 0;
   background-color: #f3f3f3;
   font-family: Georgia;
   font-size: 14pt;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 100vh;
 `;
 
 const Inner = styled.div`
@@ -54,10 +51,8 @@ const Services = () => (
     <Inner>
       <H2> holistic services </H2>
       <p>
-        We look at a brand's entire ecosystem - everywhere they communicate
-        everything.
-        <br /> Then we create concepts fine-tuned to unify, turn heads, change
-        minds, and be practical.
+        We look at a brand's entire ecosystem - everywhere they communicate everything.
+        <br /> Then we create concepts fine-tuned to unify, turn heads, change minds, and be practical.
       </p>
       <ServiceList>
         <Ul>

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import WigrumBold from './asset/fonts/wigrum-bold.otf';
-import debounce from 'lodash.debounce';
-import { scrollTo } from './utility';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -15,9 +12,6 @@ const Wrapper = styled.div`
   background-color: #f3f3f3;
   font-family: Georgia;
   font-size: 14pt;
-  position: sticky;
-  top: 0;
-  margin-bottom: 100vh;
 `;
 
 const H2 = styled.h2`
@@ -32,26 +26,6 @@ const H3 = styled.h3`
 `;
 
 class About extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.handleScrollDebounced = debounce(this.handleScroll, 200);
-  // }
-
-  // handleScroll = e => {
-  //   let distance = e.target.scrollTop;
-  //   console.log('body', e.target.scrollHeight);
-  //   console.log('innerheight', window.innerHeight);
-  //   console.log('scrollheight', document.documentElement.scrollHeight);
-  //   console.log('distance', distance);
-  //   if (distance < window.innerHeight * 2) {
-  //     scrollTo(document.body, window.innerHeight);
-  //   }
-  // };
-
-  // componentDidMount() {
-  //   document.body.addEventListener('scroll', this.handleScrollDebounced);
-  // }
-
   render() {
     return (
       <Wrapper>

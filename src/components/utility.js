@@ -1,5 +1,3 @@
-// scrollto animation
-
 // easing functions http://goo.gl/5HLl8
 Math.easeInOutQuad = function(t, b, c, d) {
   t /= d / 2;
@@ -41,11 +39,7 @@ export const scrollTo = (to, callback, duration) => {
     document.body.scrollTop = amount;
   }
   function position() {
-    return (
-      document.documentElement.scrollTop ||
-      document.body.parentNode.scrollTop ||
-      document.body.scrollTop
-    );
+    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
   }
   var start = position(),
     change = to - start,
@@ -73,14 +67,10 @@ export const scrollTo = (to, callback, duration) => {
 };
 
 export const VIDEO = window.innerHeight;
-export const ABOUT = VIDEO * 2;
-export const ABOUTSLIDE = VIDEO * 3;
-export const PORTFOLIO1 = VIDEO * 4;
-export const PORTFOLIO1SLIDE = VIDEO * 5;
-export const PORTFOLIO2 = VIDEO * 6;
-export const PORTFOLIO2SLIDE = VIDEO * 7;
-export const PORTFOLIO3 = VIDEO * 8;
-export const PORTFOLIO3SLIDE = VIDEO * 9;
-export const SERVICES = VIDEO * 10;
-export const SERVICESSLIDE = VIDEO * 11;
-export const CONTACT = VIDEO * 12;
+export const ABOUT = VIDEO;
+export const PORTFOLIO1 = VIDEO * 2;
+export const PORTFOLIO2 = VIDEO * 3;
+export const PORTFOLIO3 = VIDEO * 4;
+export const PORTFOLIO4 = VIDEO * 5;
+export const SERVICES = VIDEO * 6;
+export const CONTACT = VIDEO * 8;

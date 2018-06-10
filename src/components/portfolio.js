@@ -7,9 +7,6 @@ import './portfolio.css';
 
 export const SceneWrapper = styled.div`
   backgroundcolor: #fff;
-  position: sticky;
-  top: 0;
-  margin-bottom: 100vh;
 `;
 
 const Img = styled.img`
@@ -31,19 +28,20 @@ const settings = {
 };
 
 const convertAlt = img => img.split('/')[4].split('.')[0];
-
-const Portfolio = ({ imgs: [img1, img2, img3, img4, img5], hasVideo }) => (
+const Portfolio = ({ imgs, hasVideo }) => (
   <SceneWrapper>
     <Slider {...settings}>
-      <Img src={img1} alt={convertAlt(img1)} />
-      <Img src={img2} alt={convertAlt(img2)} />
-      <Img src={img3} alt={convertAlt(img3)} />
-      {hasVideo ? (
-        <VideoSlide source={img4} />
-      ) : (
-        <Img src={img4} alt={convertAlt(img4)} />
+      {imgs.map(
+        (img, key) =>
+          hasVideo && key === 3 ? (
+            <VideoSlide key={key} source={img} />
+          ) : (
+            <picture key={key}>
+              <source srcSet={img.v} media="(max-width: 420px)" />
+              <Img src={img.h} alt={convertAlt(img.h)} />
+            </picture>
+          )
       )}
-      <Img src={img5} alt={convertAlt(img5)} />
     </Slider>
   </SceneWrapper>
 );
