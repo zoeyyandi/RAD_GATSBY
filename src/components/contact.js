@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Type from './radType';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -60,6 +61,7 @@ const Contact = () => (
     <Paragraph>
       <A href="mailto:hey@rrrad.ca?Subject=Hello%20">hey@rrrad.ca</A>
     </Paragraph>
+    <Type />
   </Wrapper>
 );
 

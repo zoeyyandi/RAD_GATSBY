@@ -29,7 +29,15 @@ const H2 = styled.h2`
 
 const ServiceList = styled.div`
   display: flex;
-  padding-left: 1.5vw;
+  @media (min-width: 768px) {
+    margin-left: 2vw;
+  }
+  @media (min-width: 421px) {
+    margin-left: 3.1vw;
+  }
+  @media (min-width: 980px) {
+    margin-left: 1.6vw;
+  }
   @media (max-width: 420px) {
     flex-direction: column;
     padding-left: 4.5vw;
@@ -41,7 +49,7 @@ const Ul = styled.ul`
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     display: block;
     width: 100%;
   }

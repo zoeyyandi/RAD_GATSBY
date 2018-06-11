@@ -9,17 +9,17 @@ const Wrapper = styled.div`
   position: relative;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
+  box-sizing: border-box !important;
 `;
 const Video = styled.video`
   position: absolute;
   left: 0;
   top: 0;
-  width: auto;
-  height: 100%;
-  min-height: 100%;
+  right: 0;
+  bottom: 0;
   min-width: 100%;
-  z-index: -100;
+  min-height: 100%;
 `;
 
 const OverLay = styled.div`
@@ -31,7 +31,6 @@ const OverLay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -99;
 `;
 const Img = styled.img`
   width: 35%;
@@ -42,7 +41,11 @@ class VideoSection extends Component {
     return (
       <Wrapper>
         <Video poster={videoBgImg} autoPlay loop muted>
-          <source src={videoUrl} type="video/mp4" />
+          <source
+            src={videoUrl}
+            type="video/mp4"
+            media="all and (min-width: 481px)"
+          />
           <source
             src={smallUrl}
             type="video/mp4"
