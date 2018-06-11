@@ -49,7 +49,9 @@ class VideoSection extends Component {
             right: 0,
             bottom: 0,
             minWidth: '100%',
-            minHeight: '100%'
+            minHeight: '100%',
+            objectFit: 'none',
+            objectPosition: '50% 50%'
           }}
           autoPlay
           muted
