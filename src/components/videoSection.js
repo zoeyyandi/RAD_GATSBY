@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  box-sizing: border-box !important;
 `;
 const Video = styled.video`
   position: absolute;
