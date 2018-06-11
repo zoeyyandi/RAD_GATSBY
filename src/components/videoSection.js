@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import videoMp4 from './asset/video.mp4';
 import videoWebm from './asset/video.webm';
 import overlayImg from './asset/RADLOGO.svg';
+import jacquemus from './asset/jacquemus.mp4';
 
 const Wrapper = styled.div`
   position: relative;
@@ -46,8 +47,8 @@ class VideoSection extends Component {
     return (
       <Wrapper>
         <Video innerRef={el => (this.video = el)} autoPlay muted loop>
-          <source src={videoMp4} type="video/mp4" />
-          <source src={videoWebm} type="video/webm" />
+          <source src={jacquemus} type="video/mp4" />
+          {/* <source src={videoWebm} type="video/webm" /> */}
         </Video>
         <OverLay>
           <Img src={overlayImg} />
