@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import videoUrl from './asset/video.mp4';
-import smallUrl from './asset/videoSmall.mp4';
+import videoMp4 from './asset/video.mp4';
+import videoWebm from './asset/video.webm';
 import videoBgImg from './asset/poster1.png';
 import overlayImg from './asset/RADLOGO.svg';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
 `;
 const Video = styled.video`
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   min-width: 100%;
   min-height: 100%;
 `;
@@ -40,7 +35,8 @@ class VideoSection extends Component {
     return (
       <Wrapper>
         <Video poster={videoBgImg} autoPlay loop muted>
-          <source src={videoUrl} type="video/mp4" />
+          <source src={videoMp4} type="video/mp4" />
+          <source src={videoWebm} type="video/webm" />
         </Video>
         <OverLay>
           <Img src={overlayImg} />

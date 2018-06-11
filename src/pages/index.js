@@ -5,7 +5,13 @@ import Portfolio from '../components/portfolio';
 import Services from '../components/services';
 import Contact from '../components/contact';
 import SideNav from '../components/sideNav';
-import { womens, dispatches, terroirs, kstars, us } from '../components/asset/images/index';
+import {
+  womens,
+  dispatches,
+  terroirs,
+  kstars,
+  us
+} from '../components/asset/images/index';
 import _ from 'lodash';
 
 class IndexPage extends Component {
@@ -29,7 +35,11 @@ class IndexPage extends Component {
   }
 
   getScrollTop = () => {
-    const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    const scrollTop = Math.max(
+      window.pageYOffset,
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    );
     this.setState({ scrollTop });
   };
 
@@ -37,6 +47,7 @@ class IndexPage extends Component {
     return (
       <div>
         <VideoSection />
+        <div style={{ height: '100vh' }} />
         <About />
         <Portfolio className={'womens'} imgs={womens} />
         <Portfolio className={'dispatch'} imgs={dispatches} hasVideo={true} />
