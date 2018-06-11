@@ -40,16 +40,7 @@ class VideoSection extends Component {
     return (
       <Wrapper>
         <Video poster={videoBgImg} autoPlay loop muted>
-          <source
-            src={videoUrl}
-            type="video/mp4"
-            media="all and (min-width: 481px)"
-          />
-          <source
-            src={smallUrl}
-            type="video/mp4"
-            media="all and (max-width: 480px)"
-          />
+          <source src={videoUrl} type="video/mp4" />
         </Video>
         <OverLay>
           <Img src={overlayImg} />
