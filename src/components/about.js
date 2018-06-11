@@ -64,10 +64,3 @@ class About extends Component {
 }
 
 export default About;
-
-//min 1024
-//min 768 - max 1024
-//min 420 - max 768
-//max 420
-
-// font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));

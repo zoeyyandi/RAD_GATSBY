@@ -30,7 +30,11 @@ export const scrollTo = (to, callback, duration) => {
     document.body.scrollTop = amount;
   }
   function position() {
-    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
+    return (
+      document.documentElement.scrollTop ||
+      document.body.parentNode.scrollTop ||
+      document.body.scrollTop
+    );
   }
   var start = position(),
     change = to - start,
@@ -58,6 +62,9 @@ export const scrollTo = (to, callback, duration) => {
 };
 
 export const getSection = (scrollTop, ranges) => {
-  const section = ranges.find(range => scrollTop >= range.min && scrollTop < range.max);
+  console.log(scrollTop, ranges);
+  const section = ranges.find(
+    range => scrollTop >= range.min && scrollTop <= range.max
+  );
   return section.sectionName;
 };

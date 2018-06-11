@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 520px) {
+    right: 1.5vw;
+  }
 `;
 
 const List = styled.ul`
@@ -37,7 +40,7 @@ const A = styled.a`
   text-decoration: ${({ active }) => (active ? 'underline' : 'none')};
   color: ${({ navColor }) => navColor};
   font-family: Georgia;
-  font-size: 13pt;
+  font-size: calc(11pt + (13 - 11) * ((100vw - 420px) / (1024 - 420)));
 `;
 
 const Logo = A.extend`
@@ -47,7 +50,7 @@ const Logo = A.extend`
 
 class SideNav extends Component {
   portfolios = ['portfolio', 'portfolio2', 'portfolio3', 'portfolio4'];
-  service = ['services', 'us'];
+  service = ['services', 'us1', 'us2'];
   state = {
     activeSection: 'rad',
     navColor: 'white'
@@ -84,19 +87,37 @@ class SideNav extends Component {
     this.portfolio3 = this.portfolio2 + this.sectionHeight;
     this.portfolio4 = this.portfolio3 + this.sectionHeight;
     this.services = this.portfolio4 + this.sectionHeight;
-    this.us = this.services + this.sectionHeight;
-    this.contact = this.us + this.sectionHeight;
+    this.us1 = this.services + this.sectionHeight;
+    this.us2 = this.us1 + this.sectionHeight;
+    this.contact = this.us2 + this.sectionHeight;
     this.bottom = this.sectionHeight * 9;
     this.ranges = [
       { sectionName: 'rad', min: this.rad, max: this.about },
-      { sectionName: 'about', min: this.about, max: this.portfolio },
-      { sectionName: 'portfolio', min: this.portfolio, max: this.portfolio2 },
-      { sectionName: 'portfolio2', min: this.portfolio2, max: this.portfolio3 },
-      { sectionName: 'portfolio3', min: this.portfolio3, max: this.portfolio4 },
-      { sectionName: 'portfolio4', min: this.portfolio4, max: this.services },
-      { sectionName: 'services', min: this.services, max: this.us },
-      { sectionName: 'us', min: this.us, max: this.contact },
-      { sectionName: 'contact', min: this.contact, max: this.bottom }
+      { sectionName: 'about', min: this.about + 1 + 1, max: this.portfolio },
+      {
+        sectionName: 'portfolio',
+        min: this.portfolio + 1,
+        max: this.portfolio2
+      },
+      {
+        sectionName: 'portfolio2',
+        min: this.portfolio2 + 1,
+        max: this.portfolio3
+      },
+      {
+        sectionName: 'portfolio3',
+        min: this.portfolio3 + 1,
+        max: this.portfolio4
+      },
+      {
+        sectionName: 'portfolio4',
+        min: this.portfolio4 + 1,
+        max: this.services
+      },
+      { sectionName: 'services', min: this.services + 1, max: this.us1 },
+      { sectionName: 'us1', min: this.us1 + 1, max: this.us2 },
+      { sectionName: 'us2', min: this.us2 + 1, max: this.contact },
+      { sectionName: 'contact', min: this.contact + 1, max: this.bottom }
     ];
     // handle click
     this.aboutClick = this.sectionHeight;

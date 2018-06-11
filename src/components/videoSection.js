@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: black;
 `;
 const Video = styled.video`
   position: absolute;

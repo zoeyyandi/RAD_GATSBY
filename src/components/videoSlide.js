@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import poster from './asset/poster.png';
 import './videoSlide.css';
 import Modal from './modal';
 
@@ -35,7 +34,11 @@ export default class VideoSlide extends Component {
     return (
       <Wrapper onClick={this.handleClick}>
         {!this.state.isPlaying && <Modal />}
-        <video onPause={this.handlePause} className="video" ref={video => (this.video = video)} poster={poster}>
+        <video
+          onPause={this.handlePause}
+          className="video"
+          ref={video => (this.video = video)}
+        >
           <source src={this.props.source} type="video/mp4" />
         </video>
       </Wrapper>

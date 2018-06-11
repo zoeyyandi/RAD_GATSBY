@@ -2,27 +2,29 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const RadText = styled.h2`
-  font-family: WigrumBold;
+  font-family: rad-web;
   font-size: calc(34pt + (170 - 34) * ((100vw - 420px) / (1024 - 420)));
   margin: 0;
   position: absolute;
   bottom: 0;
-  left: -1%;
-  @media (max-width: 420px) {
+  left: 1%;
+  @media (max-width: 480px) {
     display: none;
   }
+  letter-spacing: 2vw;
 `;
 
 const RadTextForMobile = styled.h2`
-  font-family: WigrumBold;
+  font-family: rad-web;
   font-size: 80pt
   margin: 0;
   position: absolute;
   bottom: 0;
-  left: -1%;
-  @media (min-width: 421px) {
+  left: 1%;
+  @media (min-width: 481px) {
     display: none;
   }
+  letter-spacing: 2vw;
 `;
 
 const Wrapper = styled.div`

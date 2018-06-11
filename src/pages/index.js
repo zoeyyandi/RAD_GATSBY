@@ -5,6 +5,7 @@ import Portfolio from '../components/portfolio';
 import Services from '../components/services';
 import Contact from '../components/contact';
 import SideNav from '../components/sideNav';
+import Us from '../components/us';
 import {
   womens,
   dispatches,
@@ -53,7 +54,8 @@ class IndexPage extends Component {
         <Portfolio className={'terroir'} imgs={terroirs} />
         <Portfolio className={'kstar'} imgs={kstars} />
         <Services />
-        <Portfolio imgs={us} />
+        <Us img={us[0]} />
+        <Us img={us[1]} />
         <Contact />
         <SideNav currentScrollTop={this.state.scrollTop} />
       </div>
