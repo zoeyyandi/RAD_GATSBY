@@ -39,10 +39,13 @@ const Img = styled.img`
 `;
 
 class VideoSection extends Component {
+  componentDidMount() {
+    this.video.play();
+  }
   render() {
     return (
       <Wrapper>
-        <Video autoPlay muted loop controls>
+        <Video innerRef={el => (this.video = el)} autoPlay muted loop>
           <source src={videoMp4} type="video/mp4" />
           <source src={videoWebm} type="video/webm" />
         </Video>
