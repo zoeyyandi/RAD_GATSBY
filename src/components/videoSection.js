@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 const Video = styled.video`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: auto;
@@ -20,19 +20,14 @@ const Video = styled.video`
   min-width: 100%;
   z-index: -100;
 `;
-const OverLay = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: -99;
-`;
+
 const Img = styled.img`
+  position: absolute;
   width: 35%;
+  z-index: -99;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 class VideoSection extends Component {
@@ -42,9 +37,7 @@ class VideoSection extends Component {
         <Video poster={videoBgImg} autoPlay loop muted>
           <source src={videoUrl} type="video/mp4" />
         </Video>
-        <OverLay>
-          <Img src={overlayImg} />
-        </OverLay>
+        <Img src={overlayImg} />
       </Wrapper>
     );
   }
