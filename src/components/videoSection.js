@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import videoUrl from './asset/video.mp4';
+import smallUrl from './asset/videoSmall.mp4';
 import videoBgImg from './asset/poster1.png';
 import overlayImg from './asset/RADLOGO.svg';
 
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 const Video = styled.video`
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: auto;
@@ -21,13 +22,19 @@ const Video = styled.video`
   z-index: -100;
 `;
 
-const Img = styled.img`
+const OverLay = styled.div`
   position: absolute;
-  width: 35%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: -99;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+`;
+const Img = styled.img`
+  width: 35%;
 `;
 
 class VideoSection extends Component {
@@ -36,8 +43,15 @@ class VideoSection extends Component {
       <Wrapper>
         <Video poster={videoBgImg} autoPlay loop muted>
           <source src={videoUrl} type="video/mp4" />
+          <source
+            src={smallUrl}
+            type="video/mp4"
+            media="all and (max-width: 480px)"
+          />
         </Video>
-        <Img src={overlayImg} />
+        <OverLay>
+          <Img src={overlayImg} />
+        </OverLay>
       </Wrapper>
     );
   }
