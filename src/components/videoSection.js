@@ -33,23 +33,32 @@ const OverLay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -99;
 `;
 const Img = styled.img`
   width: 35%;
 `;
 
 class VideoSection extends Component {
-  componentDidMount() {
-    this.video.play();
-  }
   render() {
     return (
       <Wrapper>
-        <Video innerRef={el => (this.video = el)} autoPlay muted loop>
+        <video
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            minWidth: '100%',
+            minHeight: '100%'
+          }}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source src={jacquemus} type="video/mp4" />
-          {/* <source src={videoWebm} type="video/webm" /> */}
-        </Video>
+        </video>
         <OverLay>
           <Img src={overlayImg} />
         </OverLay>
