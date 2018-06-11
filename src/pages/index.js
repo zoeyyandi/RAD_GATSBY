@@ -47,7 +47,6 @@ class IndexPage extends Component {
     return (
       <div>
         <VideoSection />
-        <div style={{ height: '100vh' }} />
         <About />
         <Portfolio className={'womens'} imgs={womens} />
         <Portfolio className={'dispatch'} imgs={dispatches} hasVideo={true} />
