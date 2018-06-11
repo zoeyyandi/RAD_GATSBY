@@ -42,7 +42,7 @@ class VideoSection extends Component {
   render() {
     return (
       <Wrapper>
-        <Video autoPlay loop controls>
+        <Video autoPlay muted loop controls>
           <source src={videoMp4} type="video/mp4" />
           <source src={videoWebm} type="video/webm" />
         </Video>
