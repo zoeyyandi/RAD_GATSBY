@@ -6,14 +6,20 @@ import videoBgImg from './asset/poster1.png';
 import overlayImg from './asset/RADLOGO.svg';
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: relative;
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 `;
 const Video = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: -100;
 `;
 
 const OverLay = styled.div`
@@ -25,6 +31,7 @@ const OverLay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -99;
 `;
 const Img = styled.img`
   width: 35%;
