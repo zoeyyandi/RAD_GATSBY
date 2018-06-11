@@ -18,7 +18,7 @@ import Dispatch_2_v from './vertical/2_DISPATCH/Dispatch_Coffee_Branding_Rad_Ver
 import Dispatch_3_v from './vertical/2_DISPATCH/Dispatch_Coffee_Branding_Rad_Vertical_3.jpg';
 import Dispatch_4_v from './vertical/2_DISPATCH/Dispatch_Coffee_Branding_Rad_Vertical_4.jpg';
 import Dispatch_5_v from './vertical/2_DISPATCH/Dispatch_Coffee_Branding_Rad_Vertical_5.jpg';
-import Dispatch_video from '../DISPATCH COFFEE.mp4';
+import Dispatch_video from '../DISPATCH.mp4';
 import Terroir_1_h from './horizontal/3_Terroir/Terroir_Branding_Rad_Horizontal_1.jpg';
 import Terroir_2_h from './horizontal/3_Terroir/Terroir_Branding_Rad_Horizontal_2.jpg';
 import Terroir_3_h from './horizontal/3_Terroir/Terroir_Branding_Rad_Horizontal_3.jpg';

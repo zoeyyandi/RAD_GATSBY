@@ -55,15 +55,24 @@ class SideNav extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.currentScrollTop !== this.props.currentScrollTop) {
-      const activeSection = getSection(this.props.currentScrollTop, this.ranges);
-      this.setState({ activeSection, navColor: blackSections.includes(activeSection) ? 'black' : 'white' });
+      const activeSection = getSection(
+        this.props.currentScrollTop,
+        this.ranges
+      );
+      this.setState({
+        activeSection,
+        navColor: blackSections.includes(activeSection) ? 'black' : 'white'
+      });
     }
   }
 
   componentDidMount() {
     this.getCurrentSectionHeight();
     const activeSection = getSection(this.props.currentScrollTop, this.ranges);
-    this.setState({ activeSection, navColor: blackSections.includes(activeSection) ? 'black' : 'white' });
+    this.setState({
+      activeSection,
+      navColor: blackSections.includes(activeSection) ? 'black' : 'white'
+    });
   }
 
   getCurrentSectionHeight = () => {
@@ -119,7 +128,12 @@ class SideNav extends Component {
             </Logo>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A active={this.state.activeSection === 'about'} navColor={this.state.navColor} id="about" href="#">
+            <A
+              active={this.state.activeSection === 'about'}
+              navColor={this.state.navColor}
+              id="about"
+              href="#"
+            >
               About
             </A>
           </ListItem>
@@ -144,7 +158,12 @@ class SideNav extends Component {
             </A>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A active={this.state.activeSection === 'contact'} navColor={this.state.navColor} id="contact" href="#">
+            <A
+              active={this.state.activeSection === 'contact'}
+              navColor={this.state.navColor}
+              id="contact"
+              href="#"
+            >
               Contact
             </A>
           </ListItem>
