@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import videoMp4 from './asset/video.mp4';
 import videoWebm from './asset/video.webm';
-import videoBgImg from './asset/poster1.png';
 import overlayImg from './asset/RADLOGO.svg';
 
 const Wrapper = styled.div`
