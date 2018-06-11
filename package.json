@@ -16,6 +16,7 @@
   },
   "keywords": ["gatsby"],
   "license": "MIT",
+  "homepage": "https://zoeyyandi.github.io/RAD_GATSBY",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
