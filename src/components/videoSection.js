@@ -14,6 +14,14 @@ const Wrapper = styled.div`
   background-color: black;
 `;
 
+const VideoWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 const OverLay = styled.div`
   position: absolute;
   left: 0;
@@ -29,27 +37,27 @@ const Img = styled.img`
 `;
 
 class VideoSection extends Component {
+  componentDidMount() {
+    this.video.play();
+  }
   render() {
     return (
       <Wrapper>
-        <video
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            minWidth: '100%',
-            minHeight: '100%'
-          }}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={videoMp4} type="video/mp4" />
-          <source src={videoWebm} type="video/webm" />
-        </video>
+        <VideoWrapper>
+          <video
+            style={{
+              minWidth: '100%',
+              minHeight: '100%'
+            }}
+            ref={v => (this.video = v)}
+            muted
+            loop
+            playsInline
+          >
+            <source src={videoMp4} type="video/mp4" />
+            <source src={videoWebm} type="video/webm" />
+          </video>
+        </VideoWrapper>
         <OverLay>
           <Img src={overlayImg} />
         </OverLay>
