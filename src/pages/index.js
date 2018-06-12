@@ -20,8 +20,6 @@ class IndexPage extends Component {
     scrollTop: 0
   };
   scrollHandler = e => {
-    const scrollTop = e.srcElement.documentElement.scrollTop;
-    const sectionHeight = window.innerHeight;
     this.getScrollTop();
   };
 

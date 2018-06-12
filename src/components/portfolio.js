@@ -20,7 +20,7 @@ const Img = styled.img`
 const Portfolio = ({ imgs, hasVideo, className }) => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     arrows: false,
     speed: 500,
     slidesToShow: 1,

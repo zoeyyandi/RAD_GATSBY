@@ -4,7 +4,7 @@ import { scrollTo, getSection } from './utility';
 const blackSections = ['about', 'portfolio3', 'portfolio4', 'services'];
 
 const Wrapper = styled.div`
-  z-index: 10;
+  z-index: 100;
   position: fixed;
   height: 100%;
   top: 0;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 520px) {
-    right: 1.5vw;
+    right: 2.5vw;
   }
 `;
 
@@ -90,10 +90,10 @@ class SideNav extends Component {
     this.us1 = this.services + this.sectionHeight;
     this.us2 = this.us1 + this.sectionHeight;
     this.contact = this.us2 + this.sectionHeight;
-    this.bottom = this.sectionHeight * 9;
+    this.bottom = this.contact + this.sectionHeight;
     this.ranges = [
       { sectionName: 'rad', min: this.rad, max: this.about },
-      { sectionName: 'about', min: this.about + 1 + 1, max: this.portfolio },
+      { sectionName: 'about', min: this.about + 1, max: this.portfolio },
       {
         sectionName: 'portfolio',
         min: this.portfolio + 1,
@@ -123,7 +123,7 @@ class SideNav extends Component {
     this.aboutClick = this.sectionHeight;
     this.portfolioClick = this.sectionHeight * 2;
     this.servicesClick = this.sectionHeight * 6;
-    this.contactClick = this.sectionHeight * 8;
+    this.contactClick = this.sectionHeight * 9;
   };
 
   handleClick = e => {

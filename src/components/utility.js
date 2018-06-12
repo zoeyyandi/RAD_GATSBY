@@ -62,7 +62,6 @@ export const scrollTo = (to, callback, duration) => {
 };
 
 export const getSection = (scrollTop, ranges) => {
-  console.log(scrollTop, ranges);
   const section = ranges.find(
     range => scrollTop >= range.min && scrollTop <= range.max
   );
