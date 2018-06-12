@@ -27,7 +27,9 @@ const Portfolio = ({ imgs, hasVideo, className }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    dotsClass: `slick-dots ${className}`
+    dotsClass: `slick-dots ${className}`,
+    useTransform: false,
+    useCSS: false
   };
 
   return (
@@ -38,10 +40,19 @@ const Portfolio = ({ imgs, hasVideo, className }) => {
             hasVideo && key === 3 ? (
               <VideoSlide key={key} source={img} />
             ) : (
-              <picture key={key}>
-                <source srcSet={img.v} media="(max-width: 420px)" />
-                <Img src={img.h} alt={img.h} />
-              </picture>
+              <div
+                key={key}
+                style={{
+                  height: '100vh',
+                  width: '100vw',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <picture key={key}>
+                  <source srcSet={img.v} media="(max-width: 420px)" />
+                  <Img src={img.h} alt={img.h} />
+                </picture>
+              </div>
             )
         )}
       </Slider>
