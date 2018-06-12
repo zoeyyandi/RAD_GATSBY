@@ -37,9 +37,9 @@ const Img = styled.img`
 `;
 
 class VideoSection extends Component {
-  componentDidMount() {
-    this.video.play();
-  }
+  // componentDidMount() {
+  //   this.video.play();
+  // }
   render() {
     return (
       <Wrapper>
@@ -49,7 +49,8 @@ class VideoSection extends Component {
               minWidth: '100%',
               minHeight: '100%'
             }}
-            ref={v => (this.video = v)}
+            // ref={v => (this.video = v)}
+            autoPlay
             muted
             loop
             playsInline

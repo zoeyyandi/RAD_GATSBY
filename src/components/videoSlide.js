@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import './videoSlide.css';
 import Modal from './modal';
+import Poster from './asset/poster.jpg';
 
 const Wrapper = styled.div`
   cursor: pointer;
@@ -38,6 +39,7 @@ export default class VideoSlide extends Component {
           onPause={this.handlePause}
           className="video"
           ref={video => (this.video = video)}
+          poster={Poster}
         >
           <source src={this.props.source} type="video/mp4" />
         </video>
