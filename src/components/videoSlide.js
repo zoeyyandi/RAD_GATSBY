@@ -30,6 +30,10 @@ export default class VideoSlide extends Component {
     );
   };
 
+  handleOnEnd = () => {
+    this.setState({ isPlaying: false });
+  };
+
   render() {
     return (
       <Wrapper onClick={this.handleClick}>
@@ -38,6 +42,7 @@ export default class VideoSlide extends Component {
           className="video"
           ref={video => (this.video = video)}
           poster={Poster}
+          onEnded={this.handleOnEnd}
         >
           <source src={this.props.source} type="video/mp4" />
         </video>
