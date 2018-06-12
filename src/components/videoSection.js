@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-// import videoMp4 from './asset/video.mp4';
-import j from './asset/jacquemus.mp4';
+import videoMp4 from './asset/video.mp4';
 import videoWebm from './asset/video.webm';
 import overlayImg from './asset/RADLOGO.svg';
 
@@ -43,13 +42,12 @@ class VideoSection extends Component {
             minWidth: '100%',
             minHeight: '100%'
           }}
-          controls
           autoPlay
           muted
           loop
           playsInline
         >
-          <source src={j} type="video/mp4" />
+          <source src={videoMp4} type="video/mp4" />
           <source src={videoWebm} type="video/webm" />
         </video>
         <OverLay>
