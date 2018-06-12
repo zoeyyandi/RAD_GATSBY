@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
   position: relative;
+  z-index: 3;
 `;
 
 export default class VideoSlide extends Component {
@@ -29,14 +30,11 @@ export default class VideoSlide extends Component {
     );
   };
 
-  handlePause = () => this.setState({ isPlaying: false });
-
   render() {
     return (
       <Wrapper onClick={this.handleClick}>
         {!this.state.isPlaying && <Modal />}
         <video
-          onPause={this.handlePause}
           className="video"
           ref={video => (this.video = video)}
           poster={Poster}

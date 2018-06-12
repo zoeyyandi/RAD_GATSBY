@@ -8,7 +8,7 @@ const Control = styled.div`
   background-colour: white;
   border-radius: 50%;
   position: absolute;
-  z-index: 1;
+  z-index: 4;
   top: 50%;
   left: 50%;
   transform: translate(-50%);
@@ -23,7 +23,7 @@ const Play = styled.div`
   position: absolute;
   top: 1.6em;
   left: 2.1em;
-  z-index: 2;
+  z-index: 5;
 `;
 
 const Modal = () => {
