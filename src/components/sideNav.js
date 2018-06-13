@@ -57,11 +57,12 @@ class SideNav extends Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (prevProps.currentScrollTop !== this.props.currentScrollTop) {
-      const activeSection = getSection(
-        this.props.currentScrollTop,
-        this.ranges
-      );
+    if (
+      prevProps.currentScrollTop !== this.props.currentScrollTop ||
+      prevProps.sectionHeight !== this.props.sectionHeight
+    ) {
+      this.setCurrentSectionHeight(this.props.sectionHeight);
+      const activeSection = getSection(this.props.currentScrollTop, this.ranges);
       this.setState({
         activeSection,
         navColor: blackSections.includes(activeSection) ? 'black' : 'white'
@@ -70,7 +71,7 @@ class SideNav extends Component {
   }
 
   componentDidMount() {
-    this.getCurrentSectionHeight();
+    this.setCurrentSectionHeight(this.props.sectionHeight);
     const activeSection = getSection(this.props.currentScrollTop, this.ranges);
     this.setState({
       activeSection,
@@ -78,8 +79,8 @@ class SideNav extends Component {
     });
   }
 
-  getCurrentSectionHeight = () => {
-    this.sectionHeight = window.innerHeight;
+  setCurrentSectionHeight = height => {
+    this.sectionHeight = height;
     this.rad = 0;
     this.about = this.sectionHeight / 2;
     this.portfolio = this.about + this.sectionHeight;
@@ -128,8 +129,6 @@ class SideNav extends Component {
 
   handleClick = e => {
     e.preventDefault();
-    // get current section height
-    this.getCurrentSectionHeight();
     const section = e.target.id;
     const value = this[section + 'Click'];
     scrollTo(value);
@@ -149,12 +148,7 @@ class SideNav extends Component {
             </Logo>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A
-              active={this.state.activeSection === 'about'}
-              navColor={this.state.navColor}
-              id="about"
-              href="#"
-            >
+            <A active={this.state.activeSection === 'about'} navColor={this.state.navColor} id="about" href="#">
               About
             </A>
           </ListItem>
@@ -179,12 +173,7 @@ class SideNav extends Component {
             </A>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A
-              active={this.state.activeSection === 'contact'}
-              navColor={this.state.navColor}
-              id="contact"
-              href="#"
-            >
+            <A active={this.state.activeSection === 'contact'} navColor={this.state.navColor} id="contact" href="#">
               Contact
             </A>
           </ListItem>

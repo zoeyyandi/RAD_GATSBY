@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Typist from 'react-typist';
 
 const RadText = styled.h2`
   font-family: rad-web;
@@ -36,33 +37,39 @@ const Wrapper = styled.div`
 class Type extends Component {
   text = 'rrrrrrrad';
   textForMobile = 'rrrad';
+  timeouts = [];
   state = {
-    text: ''
+    typing: true
   };
 
-  componentDidMount() {
-    const array = this.text.split('');
-    this.typeWriter(array, 0);
+  done = () => {
+    this.timeouts.push(
+      setTimeout(() => {
+        this.setState({ typing: false }, () => {
+          this.timeouts.push(
+            setTimeout(() => {
+              this.setState({ typing: true });
+            }, 200)
+          );
+        });
+      }, 1000)
+    );
+  };
+
+  componentWillUnmount() {
+    this.timeouts.forEach(window.clearTimeout);
   }
 
-  typeWriter = (arr, i) => {
-    if (i === arr.length) {
-      setTimeout(() => {
-        this.setState({ text: '' });
-        this.typeWriter(arr, 0);
-      }, 500);
-    } else {
-      this.setState({ text: this.state.text + arr[i] });
-      setTimeout(() => {
-        this.typeWriter(arr, i + 1);
-      }, 150);
-    }
-  };
-
   render() {
+    const { typing } = this.state;
     return (
       <Wrapper>
-        <RadText>{this.state.text}</RadText>
+        {typing &&
+          this.props.width > 480 && (
+            <Typist cursor={{ show: false }} avgTypingDelay={200} onTypingDone={this.done}>
+              <RadText>{this.text}</RadText>
+            </Typist>
+          )}
         <RadTextForMobile>{this.textForMobile}</RadTextForMobile>
       </Wrapper>
     );

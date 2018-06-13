@@ -57,20 +57,19 @@ const Upper = styled.div`
   align-items: flex-start;
 `;
 
-const Contact = () => (
+const Contact = ({ screenWidth }) => (
   <Wrapper>
     <Upper>
       <H2> Give us a shout </H2>
       <H3>
-        We'll hear you out, catch your drift &amp; <LineBreak /> introduce our
-        way of thinking.
+        We'll hear you out, catch your drift &amp; <LineBreak /> introduce our way of thinking.
       </H3>
       <H3> We love meeting new colleagues.</H3>
       <Paragraph>
         <A href="mailto:hey@rrrad.ca?Subject=Hello%20">hey@rrrad.ca</A>
       </Paragraph>
     </Upper>
-    <Type />
+    <Type width={screenWidth} />
   </Wrapper>
 );
 
