@@ -57,7 +57,7 @@ class Type extends Component {
   };
 
   componentWillUnmount() {
-    this.timeouts.forEach(window.clearTimeout);
+    this.timeouts.forEach(clearTimeout);
   }
 
   render() {
@@ -66,7 +66,11 @@ class Type extends Component {
       <Wrapper>
         {typing &&
           this.props.width > 480 && (
-            <Typist cursor={{ show: false }} avgTypingDelay={200} onTypingDone={this.done}>
+            <Typist
+              cursor={{ show: false }}
+              avgTypingDelay={200}
+              onTypingDone={this.done}
+            >
               <RadText>{this.text}</RadText>
             </Typist>
           )}
