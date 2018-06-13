@@ -6,14 +6,20 @@ import Services from '../components/services';
 import Contact from '../components/contact';
 import SideNav from '../components/sideNav';
 import Us from '../components/us';
-import { womens, dispatches, terroirs, kstars, us } from '../components/asset/images/index';
+import {
+  womens,
+  dispatches,
+  terroirs,
+  kstars,
+  us
+} from '../components/asset/images/index';
 import _ from 'lodash';
 
 class IndexPage extends Component {
   state = {
     scrollTop: 0,
-    sectionHeight: window.innerHeight,
-    screenWidth: window.innerWidth
+    sectionHeight: 0,
+    screenWidth: 0
   };
   scrollHandler = e => {
     this.getScrollTop();
@@ -24,6 +30,10 @@ class IndexPage extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.scrollHandlerDebouced);
     window.addEventListener('resize', this.scrollHandlerDebouced);
+    this.setState({
+      sectionHeight: window.innerHeight,
+      screenWidth: window.innerWidth
+    });
   }
 
   componentWillUnmount() {
@@ -32,7 +42,11 @@ class IndexPage extends Component {
   }
 
   getScrollTop = () => {
-    const scrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    const scrollTop = Math.max(
+      window.pageYOffset,
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    );
     const sectionHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
     this.setState({ scrollTop, sectionHeight, screenWidth });
@@ -40,8 +54,6 @@ class IndexPage extends Component {
 
   render() {
     const { sectionHeight, scrollTop, screenWidth } = this.state;
-    console.log(screenWidth, sectionHeight);
-
     return (
       <div>
         <VideoSection />
