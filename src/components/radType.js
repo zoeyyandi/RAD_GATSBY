@@ -12,7 +12,7 @@ const RadText = styled.h2`
   @media (max-width: 480px) {
     display: none;
   }
-  letter-spacing: 0.5vw;
+  letter-spacing: 0.6vw;
 `;
 
 const RadTextForMobile = styled.h2`
@@ -25,7 +25,7 @@ const RadTextForMobile = styled.h2`
   @media (min-width: 481px) {
     display: none;
   }
-  letter-spacing: 0.8vw;
+  letter-spacing: 0.9vw;
 `;
 
 const Wrapper = styled.div`

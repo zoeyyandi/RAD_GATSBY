@@ -22,7 +22,7 @@ const Inner = styled.div`
 
 const H2 = styled.h2`
   font-family: WigrumBold;
-  font-size: calc(34pt + (60 - 34) * ((100vw - 420px) / (1024 - 420)));
+  font-size: calc(42pt + (60 - 42) * ((100vw - 420px) / (1024 - 420)));
   color: #292827;
   margin: 0;
 `;
@@ -76,16 +76,44 @@ const Paragraph = styled.p`
   padding: 0.5vh 0 2vh 0;
 `;
 
+const Frame = styled.div`
+  width: 45vw
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 1000px) {
+    width: 60vw;
+  }
+  @media (max-width: 768px) {
+    width: 70vw;
+  }
+  @media (max-width: 520px) {
+    width: 78vw;
+  }
+`;
+
+const H2Frame = styled.div`
+  width: 90vw;
+  padding-right: 5vw;
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 500px) {
+    width: 50vw;
+  }
+`;
+
 const Services = () => (
   <Wrapper>
     <Inner>
-      <H2> holistic services </H2>
-      <Paragraph>
-        We look at a brand's entire ecosystem - everywhere they communicate
-        anything.
-        <br /> Then we create concepts fine-tuned to unify, turn heads, change
-        minds, and be practical.
-      </Paragraph>
+      <H2Frame>
+        <H2> brand services </H2>
+      </H2Frame>
+      <Frame>
+        <Paragraph>
+          Everything in a brand's ecosystem matters. Whether it's an email
+          signature or an ad campaign. From positioning to typography and on
+          through cinematography. It all has to be wicked.
+        </Paragraph>
+      </Frame>
       <ServiceList>
         <Ul1>
           <Li>Identity</Li>

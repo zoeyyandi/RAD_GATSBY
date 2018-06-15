@@ -12,10 +12,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  padding: 6.4vh;
-  @media (max-width: 420px) {
-    padding: 2.8vh;
-  }
+  padding: 6vh 0 4vh 4vw;
 `;
 
 const A = styled.a`
@@ -34,7 +31,8 @@ const H3 = styled.h3`
   font-family: Georgia;
   font-size: calc(12pt + (16 - 12) * ((100vw - 420px) / (1024 - 420)));
   margin: 0;
-  padding: 0.5vh 0;
+  padding: 0.2vh 0;
+  line-height: 1.5;
 `;
 
 const Paragraph = styled.p`
@@ -43,27 +41,21 @@ const Paragraph = styled.p`
   padding: 2vh 0;
 `;
 
-const LineBreak = styled.br`
-  display: none;
-  @media (max-width: 420px) {
-    display: block;
-  }
-`;
-
 const Upper = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
+  width: 80vw;
 `;
 
 const Contact = ({ screenWidth, showTyping }) => (
   <Wrapper>
     <Upper>
-      <H2> Give us a shout </H2>
+      <H2> Give us a shout. </H2>
       <H3>
-        We'll hear you out, catch your drift &amp; <LineBreak /> introduce our
-        way of thinking.
+        We'll hear you out, catch your drift &amp; introduce our way of
+        thinking.
       </H3>
       <H3> We love meeting new colleagues.</H3>
       <Paragraph>
