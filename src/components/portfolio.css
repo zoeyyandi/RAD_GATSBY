@@ -48,6 +48,36 @@
   height: 100vh !important;
 }
 
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 5vw;
+}
+
+.slick-next {
+  right: 5vw;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-prev::before {
+  content: url(./asset/left.svg);
+}
+.slick-next::before {
+  content: url(./asset/right.svg);
+}
+
+.slick-slider:hover .slick-arrow {
+  display: block !important;
+}
+
 @media screen and (max-width: 420px) {
   .slick-dots li {
     margin: 0;

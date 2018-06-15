@@ -27,7 +27,7 @@ const Portfolio = ({ imgs, hasVideo, className }) => {
   const settings = {
     dots: true,
     infinite: false,
-    arrows: false,
+    arrows: true,
     fade: true,
     speed: 500,
     slidesToShow: 1,
