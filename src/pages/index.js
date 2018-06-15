@@ -19,8 +19,10 @@ class IndexPage extends Component {
   state = {
     scrollTop: 0,
     sectionHeight: 0,
-    screenWidth: 0
+    screenWidth: 0,
+    showTyping: false
   };
+
   scrollHandler = e => {
     this.getScrollTop();
   };
@@ -30,10 +32,7 @@ class IndexPage extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.scrollHandlerDebouced);
     window.addEventListener('resize', this.scrollHandlerDebouced);
-    this.setState({
-      sectionHeight: window.innerHeight,
-      screenWidth: window.innerWidth
-    });
+    this.getScrollTop();
   }
 
   componentWillUnmount() {
@@ -49,11 +48,12 @@ class IndexPage extends Component {
     );
     const sectionHeight = window.innerHeight;
     const screenWidth = window.innerWidth;
-    this.setState({ scrollTop, sectionHeight, screenWidth });
+    const showTyping = scrollTop >= sectionHeight * 9;
+    this.setState({ scrollTop, sectionHeight, screenWidth, showTyping });
   };
 
   render() {
-    const { sectionHeight, scrollTop, screenWidth } = this.state;
+    const { sectionHeight, scrollTop, screenWidth, showTyping } = this.state;
     return (
       <div>
         <VideoSection />
@@ -65,7 +65,7 @@ class IndexPage extends Component {
         <Services />
         <Us img={us[0]} />
         <Us img={us[1]} />
-        <Contact screenWidth={screenWidth} />
+        <Contact screenWidth={screenWidth} showTyping={showTyping} />
         <SideNav currentScrollTop={scrollTop} sectionHeight={sectionHeight} />
       </div>
     );

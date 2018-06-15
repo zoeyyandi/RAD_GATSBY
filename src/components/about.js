@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding-left: 4vw;
-  background-color: white;
+  background-color: #f7f8f9;
   font-family: Georgia;
 `;
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: white;
+  background-color: #f7f8f9;
   font-family: Georgia;
   font-size: 14pt;
   display: flex;

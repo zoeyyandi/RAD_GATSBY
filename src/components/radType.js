@@ -12,7 +12,7 @@ const RadText = styled.h2`
   @media (max-width: 480px) {
     display: none;
   }
-  letter-spacing: 1.8vw;
+  letter-spacing: 0.5vw;
 `;
 
 const RadTextForMobile = styled.h2`
@@ -25,7 +25,7 @@ const RadTextForMobile = styled.h2`
   @media (min-width: 481px) {
     display: none;
   }
-  letter-spacing: 1.5vw;
+  letter-spacing: 0.8vw;
 `;
 
 const Wrapper = styled.div`
@@ -37,40 +37,20 @@ const Wrapper = styled.div`
 class Type extends Component {
   text = 'rrrrrrrad';
   textForMobile = 'rrrad';
-  timeouts = [];
-  state = {
-    typing: true
-  };
+  state = { showTyping: this.props.showTyping };
 
-  done = () => {
-    this.timeouts.push(
-      setTimeout(() => {
-        this.setState({ typing: false }, () => {
-          this.timeouts.push(
-            setTimeout(() => {
-              this.setState({ typing: true });
-            }, 200)
-          );
-        });
-      }, 1000)
-    );
-  };
-
-  componentWillUnmount() {
-    this.timeouts.forEach(clearTimeout);
+  componentDidUpdate(props) {
+    if (props.showTyping !== this.props.showTyping) {
+      this.setState({ showTyping: this.props.showTyping });
+    }
   }
 
   render() {
-    const { typing } = this.state;
     return (
       <Wrapper>
-        {typing &&
+        {this.state.showTyping &&
           this.props.width > 480 && (
-            <Typist
-              cursor={{ show: false }}
-              avgTypingDelay={200}
-              onTypingDone={this.done}
-            >
+            <Typist cursor={{ show: false }} avgTypingDelay={200}>
               <RadText>{this.text}</RadText>
             </Typist>
           )}
