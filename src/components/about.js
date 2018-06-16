@@ -82,8 +82,8 @@ class About extends Component {
         <Frame>
           <Paragraph>
             Cultural relevance meets acument. Gorgeous and smart. Timeless yet
-            innovative. We find the overlap. It has to be practival <i>and</i>{' '}
-            breakthrough. Beacause we're here to change minds
+            innovative. We find the overlap. It has to be practival <i>and</i>
+            breakthrough. Beacause we're here to change minds.
           </Paragraph>
         </Frame>
       </Wrapper>

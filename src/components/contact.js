@@ -27,7 +27,7 @@ const H2 = styled.h2`
   margin-bottom: 2vh;
 `;
 
-const H3 = styled.h3`
+const H3 = styled.p`
   font-family: Georgia;
   font-size: calc(12pt + (16 - 12) * ((100vw - 420px) / (1024 - 420)));
   margin: 0;
