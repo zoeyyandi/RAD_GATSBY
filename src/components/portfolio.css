@@ -1,7 +1,11 @@
-.slick-dots {
+ul.slick-dots {
   position: absolute;
   bottom: 8%;
-  right: 25%;
+  left: 0;
+  padding-left: 4vw;
+  display: flex !important;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .slick-dots li button:before {
@@ -10,7 +14,6 @@
 
 .slick-dots.dispatch:before {
   content: 'dispatch';
-  width: 10vw;
   vertical-align: -0.5vh;
   padding-right: 1vw;
   font-family: WigrumBold;
@@ -19,7 +22,6 @@
 
 .slick-dots.womens:before {
   content: "women's mecca";
-  width: 10vw;
   vertical-align: -0.5vh;
   padding-right: 1vw;
   font-family: WigrumBold;
@@ -28,7 +30,6 @@
 
 .slick-dots.kstar:before {
   content: 'k-star';
-  width: 10vw;
   vertical-align: -0.5vh;
   padding-right: 1vw;
   font-family: WigrumBold;
@@ -37,7 +38,6 @@
 
 .slick-dots.terroir:before {
   content: 'terroir';
-  width: 10vw;
   vertical-align: -0.5vh;
   padding-right: 1vw;
   font-family: WigrumBold;
@@ -68,10 +68,18 @@
 }
 
 .slick-prev::before {
-  content: url(./asset/left.svg);
+  background-image: url(./asset/left.svg);
+  width: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  height: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  display: inline-block;
+  content: '';
 }
 .slick-next::before {
-  content: url(./asset/right.svg);
+  background-image: url(./asset/right.svg);
+  width: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  height: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  display: inline-block;
+  content: '';
 }
 
 .slick-slider:hover .slick-arrow {
@@ -84,12 +92,6 @@
   }
   .slick-dots li button {
     padding: 0;
-  }
-  .slick-dots.womens {
-    padding-left: 11vw;
-  }
-  .slick-dots.dispatch {
-    padding-left: 3vw;
   }
 }
 

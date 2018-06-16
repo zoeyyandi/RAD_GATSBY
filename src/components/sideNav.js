@@ -34,6 +34,9 @@ const ListItem = styled.li`
   transform: rotate(-180deg);
   list-style-type: none;
   margin: 0;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const A = styled.a`

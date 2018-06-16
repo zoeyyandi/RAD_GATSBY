@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import videoMp4 from './asset/video.mp4';
 import videoWebm from './asset/video.webm';
 import overlayImg from './asset/RADLOGO.svg';
-
+import './videoSection.css';
 const Wrapper = styled.div`
   position: relative;
   height: 100vh;
@@ -37,24 +37,11 @@ const Img = styled.img`
 `;
 
 class VideoSection extends Component {
-  // componentDidMount() {
-  //   this.video.play();
-  // }
   render() {
     return (
       <Wrapper>
         <VideoWrapper>
-          <video
-            style={{
-              minWidth: '100%',
-              minHeight: '100%'
-            }}
-            // ref={v => (this.video = v)}
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
+          <video className="video" autoPlay muted loop playsInline>
             <source src={videoMp4} type="video/mp4" />
             <source src={videoWebm} type="video/webm" />
           </video>
