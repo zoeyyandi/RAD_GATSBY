@@ -81,9 +81,8 @@ class About extends Component {
         </H3Frame>
         <Frame>
           <Paragraph>
-            Cultural relevance meets acument. Gorgeous and smart. Timeless yet
-            innovative. We find the overlap. It has to be practival <i>and</i>
-            breakthrough. Beacause we're here to change minds.
+            Cultural relevance meets acumen. Gorgeous and smart. Timeless yet
+            innovative. We find the overlap. It has to be practical <i>and</i> breakthrough. Beacause we're here to change minds.
           </Paragraph>
         </Frame>
       </Wrapper>
