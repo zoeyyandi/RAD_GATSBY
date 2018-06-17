@@ -10,6 +10,19 @@ ul.slick-dots {
 
 .slick-dots li button:before {
   font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  transform: translate(0, 10%);
+}
+
+.slick-dots li button {
+  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+}
+
+.slick-dots li {
+  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
 }
 
 .slick-dots.dispatch:before {
@@ -48,42 +61,51 @@ ul.slick-dots {
   height: 100vh !important;
 }
 
-.slick-prev,
-.slick-next {
+.slick-arrow {
+  display: block !important;
+}
+
+.slick-arrow.slick-prev {
   position: absolute;
-  top: 50%;
+  top: 10px;
+  left: 2vw;
+  bottom: 0;
   z-index: 1;
 }
 
-.slick-prev {
-  left: 5vw;
+.slick-arrow.slick-next {
+  position: absolute;
+  top: 10px;
+  right: 13vw;
+  bottom: 0;
+  z-index: 1;
 }
 
-.slick-next {
-  right: 5vw;
+.slick-arrow.slick-prev:hover::before {
+  background-image: url(./asset/left.svg);
 }
 
-.slick-arrow {
-  display: none !important;
+.slick-arrow.slick-next:hover::before {
+  background-image: url(./asset/right.svg);
 }
 
 .slick-prev::before {
-  background-image: url(./asset/left.svg);
-  width: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
-  height: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: calc(30px + (40 - 30) * ((100vw - 420px) / (1024 - 420)));
+  width: 10vw;
+  height: 100vh;
   display: inline-block;
   content: '';
 }
 .slick-next::before {
-  background-image: url(./asset/right.svg);
-  width: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
-  height: calc(20px + (30 - 20) * ((100vw - 420px) / (1024 - 420)));
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: calc(30px + (40 - 30) * ((100vw - 420px) / (1024 - 420)));
+  width: 10vw;
+  height: 100vh;
   display: inline-block;
   content: '';
-}
-
-.slick-slider:hover .slick-arrow {
-  display: block !important;
 }
 
 @media screen and (max-width: 420px) {
@@ -92,6 +114,12 @@ ul.slick-dots {
   }
   .slick-dots li button {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 526px) {
+  .slick-arrow {
+    display: none !important;
   }
 }
 

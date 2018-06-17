@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './fontawesome-all.css';
 import './index.css';
+import icon from '../components/asset/ico.png';
 
 const Layout = ({ children, data }) => (
   <div style={{ height: '100%' }}>
@@ -18,6 +19,7 @@ const Layout = ({ children, data }) => (
           content: 'RAD RAD RAD, DISPATCH, WOMENS MECCA, KSTAR, TERROIR'
         }
       ]}
+      link={[{ rel: 'shortcut icon', type: 'image/png', href: `${icon}` }]}
     />
     <div style={{ height: '100%' }}>{children()}</div>
   </div>
