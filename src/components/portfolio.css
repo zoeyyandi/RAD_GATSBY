@@ -9,25 +9,27 @@ ul.slick-dots {
 }
 
 .slick-dots li button:before {
-  font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
-  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
-  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
-  transform: translate(0, 10%);
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border-radius: 50%;
+  content: '';
 }
 
 .slick-dots li button {
-  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
-  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  width: 25px;
+  height: 25px;
 }
 
 .slick-dots li {
-  width: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
-  height: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
 }
 
 .slick-dots.dispatch:before {
   content: 'dispatch';
-  vertical-align: -0.5vh;
+  padding-top: 4px;
   padding-right: 1vw;
   font-family: WigrumBold;
   font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
@@ -35,7 +37,7 @@ ul.slick-dots {
 
 .slick-dots.womens:before {
   content: "women's mecca";
-  vertical-align: -0.5vh;
+  padding-top: 4px;
   padding-right: 1vw;
   font-family: WigrumBold;
   font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
@@ -43,7 +45,7 @@ ul.slick-dots {
 
 .slick-dots.kstar:before {
   content: 'k-star';
-  vertical-align: -0.5vh;
+  padding-top: 4px;
   padding-right: 1vw;
   font-family: WigrumBold;
   font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
@@ -51,7 +53,7 @@ ul.slick-dots {
 
 .slick-dots.terroir:before {
   content: 'terroir';
-  vertical-align: -0.5vh;
+  padding-top: 4px;
   padding-right: 1vw;
   font-family: WigrumBold;
   font-size: calc(11pt + (16 - 11) * ((100vw - 420px) / (1024 - 420)));
@@ -109,8 +111,34 @@ ul.slick-dots {
 }
 
 @media screen and (max-width: 420px) {
+  .slick-dots.dispatch:before {
+    padding-top: 2px;
+  }
+
+  .slick-dots.womens:before {
+    padding-top: 2px;
+  }
+
+  .slick-dots.kstar:before {
+    padding-top: 2px;
+  }
+
+  .slick-dots.terroir:before {
+    padding-top: 2px;
+  }
+
+  .slick-dots li button:before {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .slick-dots li button {
+    width: 13px !important;
+    height: 13px !important;
+  }
   .slick-dots li {
-    margin: 0;
+    width: 13px !important;
+    height: 13px !important;
+    margin: 0 2px;
   }
   .slick-dots li button {
     padding: 0;
@@ -124,7 +152,20 @@ ul.slick-dots {
 }
 
 @media screen and (max-width: 768px) {
+  .slick-dots li button:before {
+    width: 20px;
+    height: 20px;
+  }
+  .slick-dots li button {
+    width: 20px;
+    height: 20px;
+  }
   .slick-dots li {
-    margin: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  .slick-dots li {
+    margin-right: 4px;
   }
 }
