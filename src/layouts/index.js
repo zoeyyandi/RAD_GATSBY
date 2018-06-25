@@ -13,10 +13,37 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Rad rad RAD' },
+        {
+          name: 'description',
+          content:
+            'Work with Rad, an independent creative agency in Toronto, Canada. Business Artistry. Branding, identity, marketing, logo design, brand naming, campaign concept. Established in 2016 by Tom Smith and Richi Dao. '
+        },
         {
           name: 'keywords',
-          content: 'RAD RAD RAD, DISPATCH, WOMENS MECCA, KSTAR, TERROIR'
+          content:
+            'brand, branding, creative, concept, toronto, canada, marketing, strategy, writing, design, copywriting, art direction, agency, new, campaign'
+        },
+        {
+          property: 'og:title',
+          content: 'Rad'
+        },
+        {
+          property: 'og:description',
+          content:
+            'Work with Rad, an independent creative agency in Toronto, Canada. Business Artistry. Branding, identity, marketing, logo design, brand naming, campaign concept. Established in 2016 by Tom Smith and Richi Dao. '
+        },
+        {
+          name: 'twitter:title',
+          content: 'Rad'
+        },
+        {
+          name: 'twitter:description',
+          content:
+            'Work with Rad, an independent creative agency in Toronto, Canada. Business Artistry. Branding, identity, marketing, logo design, brand naming, campaign concept. Established in 2016 by Tom Smith and Richi Dao. '
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         }
       ]}
       link={[{ rel: 'shortcut icon', type: 'image/png', href: `${icon}` }]}
