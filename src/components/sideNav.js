@@ -34,7 +34,7 @@ const ListItem = styled.li`
   transform: rotate(-180deg);
   list-style-type: none;
   margin: 0;
-  &:hover {
+  &:hover:not(:first-of-type) {
     text-decoration: underline;
   }
 `;
@@ -44,6 +44,7 @@ const A = styled.a`
   color: ${({ navColor }) => navColor};
   font-family: Georgia;
   font-size: calc(11pt + (13 - 11) * ((100vw - 420px) / (1024 - 420)));
+  transition: color .5s ease-out
 `;
 
 const Logo = A.extend`

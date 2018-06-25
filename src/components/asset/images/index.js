@@ -43,6 +43,7 @@ import us_1_h from './horizontal/us/Rad_TomSmith_RichiDao_Horizontal_1.jpg';
 import us_2_h from './horizontal/us/Rad_TomSmith_RichiDao_Horizontal_2.jpg';
 import us_1_v from './vertical/us/Rad_TomSmith_RichiDao_Vertical_1.jpg';
 import us_2_v from './vertical/us/Rad_TomSmith_RichiDao_Vertical_2.jpg';
+import twitterCard from '../twitterCard.jpg';
 
 export const womens = [
   { h: WomensMecca_1_h, v: WomensMecca_1_v },
@@ -78,3 +79,4 @@ export const kstars = [
 ];
 
 export const us = [{ h: us_1_h, v: us_1_v }, { h: us_2_h, v: us_2_v }];
+export const twitterCardThumbnail = twitterCard;

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Typist from "react-typist";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Typist from 'react-typist';
 
 const RadText = styled.h2`
   font-family: rad-web;
@@ -35,8 +35,8 @@ const Wrapper = styled.div`
 `;
 
 class Type extends Component {
-  text = "rrrrrrrad";
-  textForMobile = "rrrad";
+  text = 'rrrrrrrad';
+  textForMobile = 'rrrad';
   state = { showTyping: this.props.showTyping };
 
   componentDidUpdate(props) {
@@ -48,13 +48,15 @@ class Type extends Component {
   render() {
     return (
       <Wrapper>
-        {this.state.showTyping &&
-          this.props.width > 480 && (
-            <Typist cursor={{ show: false }} avgTypingDelay={200}>
+        {this.state.showTyping && (
+          <Typist cursor={{ show: false }} avgTypingDelay={200}>
+            {this.props.width > 480 ? (
               <RadText>{this.text}</RadText>
-            </Typist>
-          )}
-        <RadTextForMobile>{this.textForMobile}</RadTextForMobile>
+            ) : (
+              <RadTextForMobile>{this.textForMobile}</RadTextForMobile>
+            )}
+          </Typist>
+        )}
       </Wrapper>
     );
   }

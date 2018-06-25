@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './fontawesome-all.css';
 import './index.css';
 import icon from '../components/asset/ico.png';
+import { twitterCardThumbnail } from '../components/asset/images';
 
 const Layout = ({ children, data }) => (
   <div style={{ height: '100%' }}>
@@ -44,6 +45,10 @@ const Layout = ({ children, data }) => (
         {
           name: 'twitter:card',
           content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:image',
+          content: twitterCardThumbnail
         }
       ]}
       link={[{ rel: 'shortcut icon', type: 'image/png', href: `${icon}` }]}
