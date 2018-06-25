@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { scrollTo, getSection } from './utility';
-const blackSections = ['about', 'portfolio3', 'portfolio4', 'services'];
+import React, { Component } from "react";
+import styled from "styled-components";
+import { scrollTo, getSection } from "./utility";
+const blackSections = ["about", "portfolio3", "portfolio4", "services"];
 
 const Wrapper = styled.div`
   z-index: 100;
@@ -40,23 +40,23 @@ const ListItem = styled.li`
 `;
 
 const A = styled.a`
-  text-decoration: ${({ active }) => (active ? 'underline' : 'none')};
+  text-decoration: ${({ active }) => (active ? "underline" : "none")};
   color: ${({ navColor }) => navColor};
   font-family: Georgia;
   font-size: calc(11pt + (13 - 11) * ((100vw - 420px) / (1024 - 420)));
 `;
 
 const Logo = A.extend`
-  font-family: WigrumBold;
-  font-size: 24pt;
+  font-family: rad-web;
+  font-size: 26pt;
 `;
 
 class SideNav extends Component {
-  portfolios = ['portfolio', 'portfolio2', 'portfolio3', 'portfolio4'];
-  service = ['services', 'us1', 'us2'];
+  portfolios = ["portfolio", "portfolio2", "portfolio3", "portfolio4"];
+  service = ["services", "us1", "us2"];
   state = {
-    activeSection: 'rad',
-    navColor: 'white'
+    activeSection: "rad",
+    navColor: "white"
   };
 
   componentDidUpdate(prevProps) {
@@ -65,10 +65,13 @@ class SideNav extends Component {
       prevProps.sectionHeight !== this.props.sectionHeight
     ) {
       this.setCurrentSectionHeight(this.props.sectionHeight);
-      const activeSection = getSection(this.props.currentScrollTop, this.ranges);
+      const activeSection = getSection(
+        this.props.currentScrollTop,
+        this.ranges
+      );
       this.setState({
         activeSection,
-        navColor: blackSections.includes(activeSection) ? 'black' : 'white'
+        navColor: blackSections.includes(activeSection) ? "#292827" : "#f7f8f9"
       });
     }
   }
@@ -78,7 +81,7 @@ class SideNav extends Component {
     const activeSection = getSection(this.props.currentScrollTop, this.ranges);
     this.setState({
       activeSection,
-      navColor: blackSections.includes(activeSection) ? 'black' : 'white'
+      navColor: blackSections.includes(activeSection) ? "#292827" : "#f7f8f9"
     });
   }
 
@@ -96,32 +99,32 @@ class SideNav extends Component {
     this.contact = this.us2 + this.sectionHeight;
     this.bottom = this.contact + this.sectionHeight;
     this.ranges = [
-      { sectionName: 'rad', min: this.rad, max: this.about },
-      { sectionName: 'about', min: this.about + 1, max: this.portfolio },
+      { sectionName: "rad", min: this.rad, max: this.about },
+      { sectionName: "about", min: this.about + 1, max: this.portfolio },
       {
-        sectionName: 'portfolio',
+        sectionName: "portfolio",
         min: this.portfolio + 1,
         max: this.portfolio2
       },
       {
-        sectionName: 'portfolio2',
+        sectionName: "portfolio2",
         min: this.portfolio2 + 1,
         max: this.portfolio3
       },
       {
-        sectionName: 'portfolio3',
+        sectionName: "portfolio3",
         min: this.portfolio3 + 1,
         max: this.portfolio4
       },
       {
-        sectionName: 'portfolio4',
+        sectionName: "portfolio4",
         min: this.portfolio4 + 1,
         max: this.services
       },
-      { sectionName: 'services', min: this.services + 1, max: this.us1 },
-      { sectionName: 'us1', min: this.us1 + 1, max: this.us2 },
-      { sectionName: 'us2', min: this.us2 + 1, max: this.contact },
-      { sectionName: 'contact', min: this.contact + 1, max: this.bottom }
+      { sectionName: "services", min: this.services + 1, max: this.us1 },
+      { sectionName: "us1", min: this.us1 + 1, max: this.us2 },
+      { sectionName: "us2", min: this.us2 + 1, max: this.contact },
+      { sectionName: "contact", min: this.contact + 1, max: this.bottom }
     ];
     // handle click
     this.aboutClick = this.sectionHeight;
@@ -133,11 +136,11 @@ class SideNav extends Component {
   handleClick = e => {
     e.preventDefault();
     const section = e.target.id;
-    const value = this[section + 'Click'];
+    const value = this[section + "Click"];
     scrollTo(value);
     this.setState({
       activeSection: section,
-      navColor: blackSections.includes(section) ? 'black' : 'white'
+      navColor: blackSections.includes(section) ? "black" : "white"
     });
   };
 
@@ -151,7 +154,12 @@ class SideNav extends Component {
             </Logo>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A active={this.state.activeSection === 'about'} navColor={this.state.navColor} id="about" href="#">
+            <A
+              active={this.state.activeSection === "about"}
+              navColor={this.state.navColor}
+              id="about"
+              href="#"
+            >
               About
             </A>
           </ListItem>
@@ -176,7 +184,12 @@ class SideNav extends Component {
             </A>
           </ListItem>
           <ListItem onClick={e => this.handleClick(e)}>
-            <A active={this.state.activeSection === 'contact'} navColor={this.state.navColor} id="contact" href="#">
+            <A
+              active={this.state.activeSection === "contact"}
+              navColor={this.state.navColor}
+              id="contact"
+              href="#"
+            >
               Contact
             </A>
           </ListItem>

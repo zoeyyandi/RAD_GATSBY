@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -25,6 +25,7 @@ const H2 = styled.h2`
   font-size: calc(42pt + (60 - 42) * ((100vw - 420px) / (1024 - 420)));
   color: #292827;
   margin: 0;
+  letter-spacing: -0.3vw;
 `;
 
 const ServiceList = styled.div`
@@ -109,9 +110,9 @@ const Services = () => (
       </H2Frame>
       <Frame>
         <Paragraph>
-          Everything in a brand's ecosystem matters. Whether it's an email
-          signature or an ad campaign. From positioning to typography and on
-          through cinematography. It all has to be wicked.
+          Everything in a brand&#8217;s ecosystem matters. Whether it&#8217;s an
+          email signature or an ad campaign. From positioning to typography and
+          on through cinematography. It all has to be wicked.
         </Paragraph>
       </Frame>
       <ServiceList>

@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Type from './radType';
+import React from "react";
+import styled from "styled-components";
+import Type from "./radType";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -25,6 +25,7 @@ const H2 = styled.h2`
   font-family: Georgia;
   font-size: calc(22pt + (42 - 22) * ((100vw - 420px) / (1024 - 420)));
   margin-bottom: 2vh;
+  letter-spacing: -0.08vw;
 `;
 
 const H3 = styled.p`
@@ -54,7 +55,7 @@ const Contact = ({ screenWidth, showTyping }) => (
     <Upper>
       <H2> Give us a shout. </H2>
       <H3>
-        We'll hear you out, catch your drift &amp; introduce our way of
+        We&#8217;ll hear you out, catch your drift &amp; introduce our way of
         thinking.
       </H3>
       <H3> We love meeting new colleagues.</H3>

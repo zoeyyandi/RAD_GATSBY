@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Typist from 'react-typist';
+import React, { Component } from "react";
+import styled from "styled-components";
+import Typist from "react-typist";
 
 const RadText = styled.h2`
   font-family: rad-web;
@@ -12,7 +12,7 @@ const RadText = styled.h2`
   @media (max-width: 480px) {
     display: none;
   }
-  letter-spacing: 0.6vw;
+  letter-spacing: 0.55vw;
 `;
 
 const RadTextForMobile = styled.h2`
@@ -25,7 +25,7 @@ const RadTextForMobile = styled.h2`
   @media (min-width: 481px) {
     display: none;
   }
-  letter-spacing: 0.9vw;
+  letter-spacing: 0.65vw;
 `;
 
 const Wrapper = styled.div`
@@ -35,8 +35,8 @@ const Wrapper = styled.div`
 `;
 
 class Type extends Component {
-  text = 'rrrrrrrad';
-  textForMobile = 'rrrad';
+  text = "rrrrrrrad";
+  textForMobile = "rrrad";
   state = { showTyping: this.props.showTyping };
 
   componentDidUpdate(props) {
