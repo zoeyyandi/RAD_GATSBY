@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import Type from "./radType";
+import React from 'react';
+import styled from 'styled-components';
+import Type from './radType';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -39,7 +39,7 @@ const H3 = styled.p`
 const Paragraph = styled.p`
   font-size: calc(12pt + (15 - 12) * ((100vw - 420px) / (1024 - 420)));
   margin: 0;
-  padding: 2vh 0;
+  padding: 2vh 0 4vh 0;
 `;
 
 const Upper = styled.div`
@@ -48,6 +48,11 @@ const Upper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 80vw;
+`;
+
+const Address = Paragraph.extend`
+  padding: 0;
+  font-size: calc(11pt + (14 - 11) * ((100vw - 420px) / (1024 - 420)));
 `;
 
 const Contact = ({ screenWidth, showTyping }) => (
@@ -62,6 +67,9 @@ const Contact = ({ screenWidth, showTyping }) => (
       <Paragraph>
         <A href="mailto:hey@rrrad.ca?Subject=Hello%20">hey@rrrad.ca</A>
       </Paragraph>
+      <Address>96 Vine Avenue, Unit 7</Address>
+      <Address>Toronto, Ontario</Address>
+      <Address>M6P 1V7</Address>
     </Upper>
     <Type width={screenWidth} showTyping={showTyping} />
   </Wrapper>

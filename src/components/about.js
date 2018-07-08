@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -17,7 +17,9 @@ const H2 = styled.h2`
   font-family: WigrumBold;
   font-size: calc(42pt + (60 - 42) * ((100vw - 420px) / (1024 - 420)));
   margin: 0;
-  letter-spacing: -0.3vw;
+  letter-spacing: -0.05vw;
+  font-kerning: normal;
+  text-align: justify;
 `;
 
 const H3 = styled.h3`
@@ -84,7 +86,7 @@ class About extends Component {
         <Frame>
           <Paragraph>
             Cultural relevance meets acumen. Gorgeous and smart. Timeless yet
-            innovative. We find the overlap. It has to be practical <i>and</i>{" "}
+            innovative. We find the overlap. It has to be practical <i>and</i>{' '}
             breakthrough. Because we&#8217;re here to change minds.
           </Paragraph>
         </Frame>
