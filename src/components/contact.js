@@ -50,7 +50,7 @@ const Upper = styled.div`
   width: 80vw;
 `;
 
-const Address = Paragraph.extend`
+const Address = A.extend`
   padding: 0;
   font-size: calc(11pt + (14 - 11) * ((100vw - 420px) / (1024 - 420)));
 `;
@@ -67,9 +67,11 @@ const Contact = ({ screenWidth, showTyping }) => (
       <Paragraph>
         <A href="mailto:hey@rrrad.ca?Subject=Hello%20">hey@rrrad.ca</A>
       </Paragraph>
-      <Address>96 Vine Avenue, Unit 7</Address>
-      <Address>Toronto, Ontario</Address>
-      <Address>M6P 1V7</Address>
+      <Address href="https://goo.gl/maps/4SPLLVhwqVn">
+        96 Vine Avenue, Unit 7
+      </Address>
+      <Address href="https://goo.gl/maps/4SPLLVhwqVn">Toronto, Ontario</Address>
+      <Address href="https://goo.gl/maps/4SPLLVhwqVn">M6P 1V7</Address>
     </Upper>
     <Type width={screenWidth} showTyping={showTyping} />
   </Wrapper>

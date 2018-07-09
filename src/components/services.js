@@ -25,7 +25,8 @@ const H2 = styled.h2`
   font-size: calc(42pt + (60 - 42) * ((100vw - 420px) / (1024 - 420)));
   color: #292827;
   margin: 0;
-  letter-spacing: -0.3vw;
+  letter-spacing: -0.019em;
+  line-height: .9em;
 `;
 
 const ServiceList = styled.div`
